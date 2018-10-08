@@ -7,6 +7,7 @@ package mxl.edu.itchetumal.dadm.calculadora;
         import android.widget.TextView;
 
 
+
 public class MainActivity extends AppCompatActivity {
     Button btnUno, btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0, btnC, btnMenos, btnMas, btnIgual;
     TextView editResultado;
@@ -42,11 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("0");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("0");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"0");
                 }
-
             }
         });
         btnUno.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("1");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("1");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"1");
                 }
             }
@@ -72,8 +80,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("2");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("2");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"2");
                 }
             }
@@ -86,8 +98,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("3");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("3");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"3");
                 }
             }
@@ -100,8 +116,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("4");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("4");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"4");
                 }
             }
@@ -114,8 +134,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("5");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("5");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"5");
                 }
             }
@@ -128,8 +152,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("6");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("6");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"6");
                 }
             }
@@ -142,8 +170,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("7");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("7");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"7");
                 }
             }
@@ -156,8 +188,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("8");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("8");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"8");
                 }
             }
@@ -170,8 +206,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     editResultado.setText("9");
                 }
-                else
+                else if (editResultado.getText().equals(String.valueOf(resultado)))
                 {
+                    editResultado.setText("9");
+                    resultado = 0;
+                }
+                else {
                     editResultado.setText(editResultado.getText()+"9");
                 }
             }
@@ -199,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 editResultado=(TextView)findViewById(R.id.editResultado);
                 editResultado.setText("0");
+                resultado=0;
             }
         });
 
@@ -210,7 +251,10 @@ public class MainActivity extends AppCompatActivity {
                 editResultado=(TextView)findViewById(R.id.editResultado);
                 //Almacena los nuemeros en la variable numero2
                 numero2=Double.parseDouble(editResultado.getText().toString());
-                if(operador.equals("+"))
+                if(editResultado.getText().toString().length()==0){
+                    editResultado.setText("0");
+                }
+                else if(operador.equals("+"))
                 {
                     resultado= numero1+numero2;
                 }
@@ -219,6 +263,8 @@ public class MainActivity extends AppCompatActivity {
                     resultado= numero1-numero2;
                 }
                 editResultado.setText(String.valueOf(resultado));
+                numero1=0;
+                numero2=0;
             }
         });
     }
