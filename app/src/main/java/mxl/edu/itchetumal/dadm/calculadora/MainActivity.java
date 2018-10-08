@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     editResultado.setText("3");
                 }
                 else if (editResultado.getText().equals(String.valueOf(resultado)))
-                {
+                { 
                     editResultado.setText("3");
                     resultado = 0;
                 }
